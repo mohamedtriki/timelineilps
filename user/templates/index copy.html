@@ -1,0 +1,778 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en" style="overflow-x: hidden;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimelineILPS</title>
+    <link rel="icon" href="{% static 'img/logo.png' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" media='screen and (min-width: 900px)' href="{% static 'css/main.css' %}">
+    <link rel='stylesheet' media='screen and (max-width: 900px)' href="{% static 'css/main_mobile.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <style>
+        #events{
+            opacity: 1;
+            border-bottom: 2.5px solid white;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="header_wrapper">
+        <header id="header">
+            <div id="header_p1">
+                <a href="{% url 'landing' %}"><img src="{% static 'img/logo.png' %}" alt="" id="landing_logo"></a> 
+            </div>
+            <div id="header_p2">
+                    <div id="events" class="head_menu_li">Events</div>
+                    <a href="{% url 'about' %}"><div id="about" class="head_menu_li">About</div></a>
+            </div>
+            <div id="header_p3">
+                    <div id="subscribe" class="onHover">Subscribe</div>
+            </div>
+        </header>
+        <div id="head_desc">Documenting the daily events shaping the Israeli & Palestinian conflict.</div>
+    </div>
+    <div id="preloader">
+        <!-- <div id="loader"></div> -->
+        <div class="dot-wave">
+            <div class="dot-wave__dot"></div>
+            <div class="dot-wave__dot"></div>
+            <div class="dot-wave__dot"></div>
+            <div class="dot-wave__dot"></div>
+        </div>
+    </div>
+    <section id="big_cont">
+        <div id="search_box">
+            <form action="">
+                <input type="text" id="headline_input" name="headline" placeholder="Search by Headline..">
+                <select id="year_input" name="Year" >
+                    <option disabled selected value="0">Year</option>
+                    <option value="01">2023</option>
+                    <option value="02">2022</option>
+                    <option value="01">2021</option>
+                    <option value="02">2020</option>
+                    <option value="01">2019</option>
+                    <option value="02">2018</option>
+                    <option value="01">2017</option>
+                    <option value="02">2016</option>
+                    <option value="01">2015</option>
+                    <option value="02">2014</option>
+                    <option value="02">2013</option>
+                    <option value="02">2012</option>
+                    <option value="02">2011</option>
+                    <option value="02">2010</option>
+                    <option value="02">2009</option>
+                    <option value="02">2008</option>
+                    <option value="02">2007</option>
+                    <option value="02">2006</option>
+                    <option value="02">2005</option>
+                    <option value="02">2004</option>
+                    <option value="02">2003</option>
+                    <option value="02">2002</option>
+                    <option value="02">2001</option>
+                    <option value="02">2000</option>
+                    <option value="02">1999</option>
+                    <option value="02">1998</option>
+                    <option value="02">1997</option>
+                    <option value="02">1996</option>
+                    <option value="02">1995</option>
+                  </select>
+                <select id="month_input" name="month" >
+                    <option disabled selected value="0">Month</option>
+                    <option value="01">January</option>
+                    <option value="02">February</option>
+                    <option value="01">March</option>
+                    <option value="02">April</option>
+                    <option value="01">May</option>
+                    <option value="02">June</option>
+                    <option value="01">July</option>
+                    <option value="02">August</option>
+                    <option value="01">September</option>
+                    <option value="02">October</option>
+                    <option value="02">November</option>
+                    <option value="02">December</option>
+                  </select>
+                <select id="day_input" name="day" >
+                    <option disabled selected value="0">day</option>
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="01">03</option>
+                    <option value="02">04</option>
+                    <option value="01">05</option>
+                    <option value="02">06</option>
+                    <option value="01">07</option>
+                    <option value="02">08</option>
+                    <option value="01">09</option>
+                    <option value="02">10</option>
+                    <option value="02">11</option>
+                    <option value="02">12</option>
+                    <option value="02">13</option>
+                    <option value="02">14</option>
+                    <option value="02">15</option>
+                    <option value="02">16</option>
+                    <option value="02">17</option>
+                    <option value="02">18</option>
+                    <option value="02">19</option>
+                    <option value="02">20</option>
+                    <option value="02">21</option>
+                    <option value="02">22</option>
+                    <option value="02">23</option>
+                    <option value="02">24</option>
+                    <option value="02">25</option>
+                    <option value="02">26</option>
+                    <option value="02">27</option>
+                    <option value="02">28</option>
+                    <option value="02">29</option>
+                    <option value="02">30</option>
+                    <option value="02">31</option>
+                  </select>
+                <select id="tag_input" name="tag">
+                    <option value="default">Tag</option>
+                    <option value="name-asc">Israeli Violence</option>
+                    <option value="name-asc">Palestinian Violence</option>
+                    <option value="name-asc">Israeli Non-Violent Event</option>
+
+                </select>
+                <input type="submit" id="search_btn" value="SEARCH">
+            </form>
+        </div>
+        <div id="event_ctrl">
+            <div id="newest_event">Latest News</div>
+            <div id="ctrl_p2">
+                <div id="events_number">5 events in total</div>
+                <div id="sort_box">
+                    <div id="sort_title">Sort by</div>
+                    <select id="sort-by-select">
+                        <option value="default">Most recent</option>
+                        <option value="name-asc">Least recent</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div id="events_cont">
+            <div class="events_date">
+                <div class="event_date">04.02.23</div>
+                <div class="event">
+                    <div class="event_title">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="14" height="14" rx="7" fill="#0031AB"/>
+                        </svg>                            
+                        <div>Israel will not investigate Shireen Abu Akleh's killing</div>         
+                        <svg class="expend_arrow" width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2 2L10 10.7273L18 2" stroke="#0031AB" stroke-width="2.5"/>
+                        </svg>                                                                                                     
+                    </div>
+                    <div class="event_desc">
+                        <div class="bullets">
+                            <div class="bullet">
+                                <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                                </svg>                                    
+                                <div>Land to be repurposed for military use in one of the biggest expulsion decisions since 1967 occupation.</div>                                    
+                            </div>
+                            <div class="bullet">
+                                <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                                </svg>                                   
+                                <div>According to the Geneva conventions pertaining to humanitarian treatment in war, it is illegal to expropriate occupied land for purposes that do not benefit the people living there, or to forcibly transfer the local population.</div>                                    
+                            </div>
+                            <div class="bullet">
+                                <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                                </svg>                                    
+                                <div>Land to be repurposed for military use in one of the biggest expulsion decisions since 1967 occupation.</div>                                    
+                            </div>
+                        </div>
+                        <div class="source">
+                            <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                            </svg>                                
+                            Source:&nbsp;
+                            <a href="">The Guardian</a>
+                            &nbsp;&nbsp;
+                            ( <a href=""><div>&nbsp;Archive
+                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.92313 10.2122C7.2224 10.2122 8.27925 9.15538 8.27925 7.85654C8.27925 6.55685 7.2224 5.5 5.92313 5.5C4.62386 5.5 3.56702 6.55685 3.56702 7.85612C3.56702 9.15538 4.62386 10.2122 5.92313 10.2122Z" fill="#5781CE"/>
+                                    <path d="M0.422974 0V16.9231V22H21.5768V16.9231V0H0.422974ZM1.26913 0.846154H20.7307V12.5413L15.9397 8.14931C15.8568 8.07358 15.7477 8.03592 15.6351 8.03846C15.523 8.04354 15.4172 8.09304 15.3415 8.17596L11.8033 12.0509L13.4144 13.662C13.5798 13.8274 13.5798 14.0948 13.4144 14.2602C13.3319 14.3432 13.2236 14.3846 13.1153 14.3846C13.007 14.3846 12.8987 14.3432 12.8162 14.2607L11.1975 12.7147L9.19082 10.7081C9.03259 10.5503 8.77959 10.5422 8.61205 10.6895L1.53186 16.9231H1.26913V0.846154ZM20.7307 21.1538H1.26913V17.7692H20.7307V21.1538Z" fill="#5781CE"/>
+                                </svg>                                    
+                                </div></a>)
+                        </div>
+                        <div class="tag">
+                            <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                            </svg>                                
+                            Tags:&nbsp;
+                            <div class="tags_list">
+                                <div class="tag_el">[OCCUPATION]</div>
+                                <div class="tag_el">[HOME DEMOLITIONS & EVICTIONS]</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="event">
+                    <div class="event_title">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="14" height="14" rx="7" fill="#7BA3FF"/>
+                        </svg>                            
+                        <div>Israeli court paves way for eviction of 1,000 Palestinians from West Bank area</div>         
+                        <svg class="expend_arrow" width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2 2L10 10.7273L18 2" stroke="#7BA3FF" stroke-width="2.5"/>
+                        </svg>                                                                                                     
+                    </div>
+                    <div class="event_desc">
+                        <div class="bullets">
+                            <div class="bullet">
+                                <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                                </svg>                                    
+                                <div>Land to be repurposed for military use in one of the biggest expulsion decisions since 1967 occupation.</div>                                    
+                            </div>
+                            <div class="bullet">
+                                <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                                </svg>                                   
+                                <div>According to the Geneva conventions pertaining to humanitarian treatment in war, it is illegal to expropriate occupied land for purposes that do not benefit the people living there, or to forcibly transfer the local population.</div>                                    
+                            </div>
+                            <div class="bullet">
+                                <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                                </svg>                                    
+                                <div>Land to be repurposed for military use in one of the biggest expulsion decisions since 1967 occupation.</div>                                    
+                            </div>
+                        </div>
+                        <div class="source">
+                            <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                            </svg>                                
+                            Source:&nbsp;
+                            <a href="">The Guardian</a>
+                            &nbsp;&nbsp;
+                            ( <a href=""><div>&nbsp;Archive
+                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.92313 10.2122C7.2224 10.2122 8.27925 9.15538 8.27925 7.85654C8.27925 6.55685 7.2224 5.5 5.92313 5.5C4.62386 5.5 3.56702 6.55685 3.56702 7.85612C3.56702 9.15538 4.62386 10.2122 5.92313 10.2122Z" fill="#5781CE"/>
+                                    <path d="M0.422974 0V16.9231V22H21.5768V16.9231V0H0.422974ZM1.26913 0.846154H20.7307V12.5413L15.9397 8.14931C15.8568 8.07358 15.7477 8.03592 15.6351 8.03846C15.523 8.04354 15.4172 8.09304 15.3415 8.17596L11.8033 12.0509L13.4144 13.662C13.5798 13.8274 13.5798 14.0948 13.4144 14.2602C13.3319 14.3432 13.2236 14.3846 13.1153 14.3846C13.007 14.3846 12.8987 14.3432 12.8162 14.2607L11.1975 12.7147L9.19082 10.7081C9.03259 10.5503 8.77959 10.5422 8.61205 10.6895L1.53186 16.9231H1.26913V0.846154ZM20.7307 21.1538H1.26913V17.7692H20.7307V21.1538Z" fill="#5781CE"/>
+                                </svg>                                    
+                                </div></a>)
+                        </div>
+                        <div class="tag">
+                            <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                            </svg>                                
+                            Tags:&nbsp;
+                            <div class="tags_list">
+                                <div class="tag_el">[OCCUPATION]</div>
+                                <div class="tag_el">[HOME DEMOLITIONS & EVICTIONS]</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="events_date">
+                <div class="event_date">02.02.23</div>
+                <div class="event">
+                    <div class="event_title">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="14" height="14" rx="7" fill="#0031AB"/>
+                        </svg>                            
+                        <div>IDF identifies soldier's gun that may have killed journalist, needs bullet to verify</div>         
+                        <svg class="expend_arrow" width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2 2L10 10.7273L18 2" stroke="#0031AB" stroke-width="2.5"/>
+                        </svg>                                                                                                     
+                    </div>
+                    <div class="event_desc">
+                        <div class="bullets">
+                            <div class="bullet">
+                                <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                                </svg>                                    
+                                <div>Land to be repurposed for military use in one of the biggest expulsion decisions since 1967 occupation.</div>                                    
+                            </div>
+                            <div class="bullet">
+                                <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                                </svg>                                   
+                                <div>According to the Geneva conventions pertaining to humanitarian treatment in war, it is illegal to expropriate occupied land for purposes that do not benefit the people living there, or to forcibly transfer the local population.</div>                                    
+                            </div>
+                            <div class="bullet">
+                                <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                                </svg>                                    
+                                <div>Land to be repurposed for military use in one of the biggest expulsion decisions since 1967 occupation.</div>                                    
+                            </div>
+                        </div>
+                        <div class="source">
+                            <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                            </svg>                                
+                            Source:&nbsp;
+                            <a href="">The Guardian</a>
+                            &nbsp;&nbsp;
+                            ( <a href=""><div>&nbsp;Archive
+                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.92313 10.2122C7.2224 10.2122 8.27925 9.15538 8.27925 7.85654C8.27925 6.55685 7.2224 5.5 5.92313 5.5C4.62386 5.5 3.56702 6.55685 3.56702 7.85612C3.56702 9.15538 4.62386 10.2122 5.92313 10.2122Z" fill="#5781CE"/>
+                                    <path d="M0.422974 0V16.9231V22H21.5768V16.9231V0H0.422974ZM1.26913 0.846154H20.7307V12.5413L15.9397 8.14931C15.8568 8.07358 15.7477 8.03592 15.6351 8.03846C15.523 8.04354 15.4172 8.09304 15.3415 8.17596L11.8033 12.0509L13.4144 13.662C13.5798 13.8274 13.5798 14.0948 13.4144 14.2602C13.3319 14.3432 13.2236 14.3846 13.1153 14.3846C13.007 14.3846 12.8987 14.3432 12.8162 14.2607L11.1975 12.7147L9.19082 10.7081C9.03259 10.5503 8.77959 10.5422 8.61205 10.6895L1.53186 16.9231H1.26913V0.846154ZM20.7307 21.1538H1.26913V17.7692H20.7307V21.1538Z" fill="#5781CE"/>
+                                </svg>                                    
+                                </div></a>)
+                        </div>
+                        <div class="tag">
+                            <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                            </svg>                                
+                            Tags:&nbsp;
+                            <div class="tags_list">
+                                <div class="tag_el">[OCCUPATION]</div>
+                                <div class="tag_el">[HOME DEMOLITIONS & EVICTIONS]</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="event">
+                    <div class="event_title">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="14" height="14" rx="7" fill="#009D35"/>
+                        </svg>                            
+                        <div>VIDEO - IDF protects settlers settlers as they throw stones at Palestinians and Israeli activists in Masafer Yatta in the occupied West Bank</div>         
+                        <svg class="expend_arrow" width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2 2L10 10.7273L18 2" stroke="#009D35" stroke-width="2.5"/>
+                        </svg>                                                                                                     
+                    </div>
+                    <div class="event_desc">
+                        <div class="bullets">
+                            <div class="bullet">
+                                <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                                </svg>                                    
+                                <div>Land to be repurposed for military use in one of the biggest expulsion decisions since 1967 occupation.</div>                                    
+                            </div>
+                            <div class="bullet">
+                                <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                                </svg>                                   
+                                <div>According to the Geneva conventions pertaining to humanitarian treatment in war, it is illegal to expropriate occupied land for purposes that do not benefit the people living there, or to forcibly transfer the local population.</div>                                    
+                            </div>
+                            <div class="bullet">
+                                <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                                </svg>                                    
+                                <div>Land to be repurposed for military use in one of the biggest expulsion decisions since 1967 occupation.</div>                                    
+                            </div>
+                        </div>
+                        <div class="source">
+                            <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                            </svg>                                
+                            Source:&nbsp;
+                            <a href="">The Guardian</a>
+                            &nbsp;&nbsp;
+                            ( <a href=""><div>&nbsp;Archive
+                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.92313 10.2122C7.2224 10.2122 8.27925 9.15538 8.27925 7.85654C8.27925 6.55685 7.2224 5.5 5.92313 5.5C4.62386 5.5 3.56702 6.55685 3.56702 7.85612C3.56702 9.15538 4.62386 10.2122 5.92313 10.2122Z" fill="#5781CE"/>
+                                    <path d="M0.422974 0V16.9231V22H21.5768V16.9231V0H0.422974ZM1.26913 0.846154H20.7307V12.5413L15.9397 8.14931C15.8568 8.07358 15.7477 8.03592 15.6351 8.03846C15.523 8.04354 15.4172 8.09304 15.3415 8.17596L11.8033 12.0509L13.4144 13.662C13.5798 13.8274 13.5798 14.0948 13.4144 14.2602C13.3319 14.3432 13.2236 14.3846 13.1153 14.3846C13.007 14.3846 12.8987 14.3432 12.8162 14.2607L11.1975 12.7147L9.19082 10.7081C9.03259 10.5503 8.77959 10.5422 8.61205 10.6895L1.53186 16.9231H1.26913V0.846154ZM20.7307 21.1538H1.26913V17.7692H20.7307V21.1538Z" fill="#5781CE"/>
+                                </svg>                                    
+                                </div></a>)
+                        </div>
+                        <div class="tag">
+                            <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                            </svg>                                
+                            Tags:&nbsp;
+                            <div class="tags_list">
+                                <div class="tag_el">[OCCUPATION]</div>
+                                <div class="tag_el">[HOME DEMOLITIONS & EVICTIONS]</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="event">
+                    <div class="event_title">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="14" height="14" rx="7" fill="#D0ECDB"/>
+                        </svg>                            
+                        <div>Israel will not investigate Shireen Abu Akleh's killing</div>         
+                        <svg class="expend_arrow" width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2 2L10 10.7273L18 2" stroke="#D0ECDB" stroke-width="2.5"/>
+                        </svg>                                                                                                     
+                    </div>
+                    <div class="event_desc">
+                        <div class="bullets">
+                            <div class="bullet">
+                                <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                                </svg>                                    
+                                <div>Land to be repurposed for military use in one of the biggest expulsion decisions since 1967 occupation.</div>                                    
+                            </div>
+                            <div class="bullet">
+                                <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                                </svg>                                   
+                                <div>According to the Geneva conventions pertaining to humanitarian treatment in war, it is illegal to expropriate occupied land for purposes that do not benefit the people living there, or to forcibly transfer the local population.</div>                                    
+                            </div>
+                            <div class="bullet">
+                                <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                                </svg>                                    
+                                <div>Land to be repurposed for military use in one of the biggest expulsion decisions since 1967 occupation.</div>                                    
+                            </div>
+                        </div>
+                        <div class="source">
+                            <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                            </svg>                                
+                            Source:&nbsp;
+                            <a href="">The Guardian</a>
+                            &nbsp;&nbsp;
+                            ( <a href=""><div>&nbsp;Archive
+                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.92313 10.2122C7.2224 10.2122 8.27925 9.15538 8.27925 7.85654C8.27925 6.55685 7.2224 5.5 5.92313 5.5C4.62386 5.5 3.56702 6.55685 3.56702 7.85612C3.56702 9.15538 4.62386 10.2122 5.92313 10.2122Z" fill="#5781CE"/>
+                                    <path d="M0.422974 0V16.9231V22H21.5768V16.9231V0H0.422974ZM1.26913 0.846154H20.7307V12.5413L15.9397 8.14931C15.8568 8.07358 15.7477 8.03592 15.6351 8.03846C15.523 8.04354 15.4172 8.09304 15.3415 8.17596L11.8033 12.0509L13.4144 13.662C13.5798 13.8274 13.5798 14.0948 13.4144 14.2602C13.3319 14.3432 13.2236 14.3846 13.1153 14.3846C13.007 14.3846 12.8987 14.3432 12.8162 14.2607L11.1975 12.7147L9.19082 10.7081C9.03259 10.5503 8.77959 10.5422 8.61205 10.6895L1.53186 16.9231H1.26913V0.846154ZM20.7307 21.1538H1.26913V17.7692H20.7307V21.1538Z" fill="#5781CE"/>
+                                </svg>                                    
+                                </div></a>)
+                        </div>
+                        <div class="tag">
+                            <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                            </svg>                                
+                            Tags:&nbsp;
+                            <div class="tags_list">
+                                <div class="tag_el">[OCCUPATION]</div>
+                                <div class="tag_el">[HOME DEMOLITIONS & EVICTIONS]</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="events_date">
+                <div class="event_date">01.02.23</div>
+                <div class="event">
+                    <div class="event_title">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="14" height="14" rx="7" fill="#0031AB"/>
+                        </svg>                            
+                        <div>Israel will not investigate Shireen Abu Akleh's killing</div>         
+                        <svg class="expend_arrow" width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2 2L10 10.7273L18 2" stroke="#0031AB" stroke-width="2.5"/>
+                        </svg>                                                                                                     
+                    </div>
+                    <div class="event_desc">
+                        <div class="bullets">
+                            <div class="bullet">
+                                <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                                </svg>                                    
+                                <div>Land to be repurposed for military use in one of the biggest expulsion decisions since 1967 occupation.</div>                                    
+                            </div>
+                            <div class="bullet">
+                                <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                                </svg>                                   
+                                <div>According to the Geneva conventions pertaining to humanitarian treatment in war, it is illegal to expropriate occupied land for purposes that do not benefit the people living there, or to forcibly transfer the local population.</div>                                    
+                            </div>
+                            <div class="bullet">
+                                <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                                </svg>                                    
+                                <div>Land to be repurposed for military use in one of the biggest expulsion decisions since 1967 occupation.</div>                                    
+                            </div>
+                        </div>
+                        <div class="source">
+                            <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                            </svg>                                
+                            Source:&nbsp;
+                            <a href="">The Guardian</a>
+                            &nbsp;&nbsp;
+                            ( <a href=""><div>&nbsp;Archive
+                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.92313 10.2122C7.2224 10.2122 8.27925 9.15538 8.27925 7.85654C8.27925 6.55685 7.2224 5.5 5.92313 5.5C4.62386 5.5 3.56702 6.55685 3.56702 7.85612C3.56702 9.15538 4.62386 10.2122 5.92313 10.2122Z" fill="#5781CE"/>
+                                    <path d="M0.422974 0V16.9231V22H21.5768V16.9231V0H0.422974ZM1.26913 0.846154H20.7307V12.5413L15.9397 8.14931C15.8568 8.07358 15.7477 8.03592 15.6351 8.03846C15.523 8.04354 15.4172 8.09304 15.3415 8.17596L11.8033 12.0509L13.4144 13.662C13.5798 13.8274 13.5798 14.0948 13.4144 14.2602C13.3319 14.3432 13.2236 14.3846 13.1153 14.3846C13.007 14.3846 12.8987 14.3432 12.8162 14.2607L11.1975 12.7147L9.19082 10.7081C9.03259 10.5503 8.77959 10.5422 8.61205 10.6895L1.53186 16.9231H1.26913V0.846154ZM20.7307 21.1538H1.26913V17.7692H20.7307V21.1538Z" fill="#5781CE"/>
+                                </svg>                                    
+                                </div></a>)
+                        </div>
+                        <div class="tag">
+                            <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                            </svg>                                
+                            Tags:&nbsp;
+                            <div class="tags_list">
+                                <div class="tag_el">[OCCUPATION]</div>
+                                <div class="tag_el">[HOME DEMOLITIONS & EVICTIONS]</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="event">
+                    <div class="event_title">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="14" height="14" rx="7" fill="#7BA3FF"/>
+                        </svg>                            
+                        <div>Israeli court paves way for eviction of 1,000 Palestinians from West Bank area</div>         
+                        <svg class="expend_arrow" width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2 2L10 10.7273L18 2" stroke="#7BA3FF" stroke-width="2.5"/>
+                        </svg>                                                                                                     
+                    </div>
+                    <div class="event_desc">
+                        <div class="bullets">
+                            <div class="bullet">
+                                <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                                </svg>                                    
+                                <div>Land to be repurposed for military use in one of the biggest expulsion decisions since 1967 occupation.</div>                                    
+                            </div>
+                            <div class="bullet">
+                                <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                                </svg>                                   
+                                <div>According to the Geneva conventions pertaining to humanitarian treatment in war, it is illegal to expropriate occupied land for purposes that do not benefit the people living there, or to forcibly transfer the local population.</div>                                    
+                            </div>
+                            <div class="bullet">
+                                <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                                </svg>                                    
+                                <div>Land to be repurposed for military use in one of the biggest expulsion decisions since 1967 occupation.</div>                                    
+                            </div>
+                        </div>
+                        <div class="source">
+                            <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                            </svg>                                
+                            Source:&nbsp;
+                            <a href="">The Guardian</a>
+                            &nbsp;&nbsp;
+                            ( <a href=""><div>&nbsp;Archive
+                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.92313 10.2122C7.2224 10.2122 8.27925 9.15538 8.27925 7.85654C8.27925 6.55685 7.2224 5.5 5.92313 5.5C4.62386 5.5 3.56702 6.55685 3.56702 7.85612C3.56702 9.15538 4.62386 10.2122 5.92313 10.2122Z" fill="#5781CE"/>
+                                    <path d="M0.422974 0V16.9231V22H21.5768V16.9231V0H0.422974ZM1.26913 0.846154H20.7307V12.5413L15.9397 8.14931C15.8568 8.07358 15.7477 8.03592 15.6351 8.03846C15.523 8.04354 15.4172 8.09304 15.3415 8.17596L11.8033 12.0509L13.4144 13.662C13.5798 13.8274 13.5798 14.0948 13.4144 14.2602C13.3319 14.3432 13.2236 14.3846 13.1153 14.3846C13.007 14.3846 12.8987 14.3432 12.8162 14.2607L11.1975 12.7147L9.19082 10.7081C9.03259 10.5503 8.77959 10.5422 8.61205 10.6895L1.53186 16.9231H1.26913V0.846154ZM20.7307 21.1538H1.26913V17.7692H20.7307V21.1538Z" fill="#5781CE"/>
+                                </svg>                                    
+                                </div></a>)
+                        </div>
+                        <div class="tag">
+                            <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                            </svg>                                
+                            Tags:&nbsp;
+                            <div class="tags_list">
+                                <div class="tag_el">[OCCUPATION]</div>
+                                <div class="tag_el">[HOME DEMOLITIONS & EVICTIONS]</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="events_date">
+                <div class="event_date">02.02.23</div>
+                <div class="event">
+                    <div class="event_title">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="14" height="14" rx="7" fill="#0031AB"/>
+                        </svg>                            
+                        <div>IDF identifies soldier's gun that may have killed journalist, needs bullet to verify</div>         
+                        <svg class="expend_arrow" width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2 2L10 10.7273L18 2" stroke="#0031AB" stroke-width="2.5"/>
+                        </svg>                                                                                                     
+                    </div>
+                    <div class="event_desc">
+                        <div class="bullets">
+                            <div class="bullet">
+                                <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                                </svg>                                    
+                                <div>Land to be repurposed for military use in one of the biggest expulsion decisions since 1967 occupation.</div>                                    
+                            </div>
+                            <div class="bullet">
+                                <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                                </svg>                                   
+                                <div>According to the Geneva conventions pertaining to humanitarian treatment in war, it is illegal to expropriate occupied land for purposes that do not benefit the people living there, or to forcibly transfer the local population.</div>                                    
+                            </div>
+                            <div class="bullet">
+                                <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                                </svg>                                    
+                                <div>Land to be repurposed for military use in one of the biggest expulsion decisions since 1967 occupation.</div>                                    
+                            </div>
+                        </div>
+                        <div class="source">
+                            <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                            </svg>                                
+                            Source:&nbsp;
+                            <a href="">The Guardian</a>
+                            &nbsp;&nbsp;
+                            ( <a href=""><div>&nbsp;Archive
+                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.92313 10.2122C7.2224 10.2122 8.27925 9.15538 8.27925 7.85654C8.27925 6.55685 7.2224 5.5 5.92313 5.5C4.62386 5.5 3.56702 6.55685 3.56702 7.85612C3.56702 9.15538 4.62386 10.2122 5.92313 10.2122Z" fill="#5781CE"/>
+                                    <path d="M0.422974 0V16.9231V22H21.5768V16.9231V0H0.422974ZM1.26913 0.846154H20.7307V12.5413L15.9397 8.14931C15.8568 8.07358 15.7477 8.03592 15.6351 8.03846C15.523 8.04354 15.4172 8.09304 15.3415 8.17596L11.8033 12.0509L13.4144 13.662C13.5798 13.8274 13.5798 14.0948 13.4144 14.2602C13.3319 14.3432 13.2236 14.3846 13.1153 14.3846C13.007 14.3846 12.8987 14.3432 12.8162 14.2607L11.1975 12.7147L9.19082 10.7081C9.03259 10.5503 8.77959 10.5422 8.61205 10.6895L1.53186 16.9231H1.26913V0.846154ZM20.7307 21.1538H1.26913V17.7692H20.7307V21.1538Z" fill="#5781CE"/>
+                                </svg>                                    
+                                </div></a>)
+                        </div>
+                        <div class="tag">
+                            <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                            </svg>                                
+                            Tags:&nbsp;
+                            <div class="tags_list">
+                                <div class="tag_el">[OCCUPATION]</div>
+                                <div class="tag_el">[HOME DEMOLITIONS & EVICTIONS]</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="event">
+                    <div class="event_title">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="14" height="14" rx="7" fill="#009D35"/>
+                        </svg>                            
+                        <div>VIDEO - IDF protects settlers settlers as they throw stones at Palestinians and Israeli activists in Masafer Yatta in the occupied West Bank</div>         
+                        <svg class="expend_arrow" width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2 2L10 10.7273L18 2" stroke="#009D35" stroke-width="2.5"/>
+                        </svg>                                                                                                     
+                    </div>
+                    <div class="event_desc">
+                        <div class="bullets">
+                            <div class="bullet">
+                                <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                                </svg>                                    
+                                <div>Land to be repurposed for military use in one of the biggest expulsion decisions since 1967 occupation.</div>                                    
+                            </div>
+                            <div class="bullet">
+                                <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                                </svg>                                   
+                                <div>According to the Geneva conventions pertaining to humanitarian treatment in war, it is illegal to expropriate occupied land for purposes that do not benefit the people living there, or to forcibly transfer the local population.</div>                                    
+                            </div>
+                            <div class="bullet">
+                                <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                                </svg>                                    
+                                <div>Land to be repurposed for military use in one of the biggest expulsion decisions since 1967 occupation.</div>                                    
+                            </div>
+                        </div>
+                        <div class="source">
+                            <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                            </svg>                                
+                            Source:&nbsp;
+                            <a href="">The Guardian</a>
+                            &nbsp;&nbsp;
+                            ( <a href=""><div>&nbsp;Archive
+                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.92313 10.2122C7.2224 10.2122 8.27925 9.15538 8.27925 7.85654C8.27925 6.55685 7.2224 5.5 5.92313 5.5C4.62386 5.5 3.56702 6.55685 3.56702 7.85612C3.56702 9.15538 4.62386 10.2122 5.92313 10.2122Z" fill="#5781CE"/>
+                                    <path d="M0.422974 0V16.9231V22H21.5768V16.9231V0H0.422974ZM1.26913 0.846154H20.7307V12.5413L15.9397 8.14931C15.8568 8.07358 15.7477 8.03592 15.6351 8.03846C15.523 8.04354 15.4172 8.09304 15.3415 8.17596L11.8033 12.0509L13.4144 13.662C13.5798 13.8274 13.5798 14.0948 13.4144 14.2602C13.3319 14.3432 13.2236 14.3846 13.1153 14.3846C13.007 14.3846 12.8987 14.3432 12.8162 14.2607L11.1975 12.7147L9.19082 10.7081C9.03259 10.5503 8.77959 10.5422 8.61205 10.6895L1.53186 16.9231H1.26913V0.846154ZM20.7307 21.1538H1.26913V17.7692H20.7307V21.1538Z" fill="#5781CE"/>
+                                </svg>                                    
+                                </div></a>)
+                        </div>
+                        <div class="tag">
+                            <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                            </svg>                                
+                            Tags:&nbsp;
+                            <div class="tags_list">
+                                <div class="tag_el">[OCCUPATION]</div>
+                                <div class="tag_el">[HOME DEMOLITIONS & EVICTIONS]</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="event">
+                    <div class="event_title">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="14" height="14" rx="7" fill="#D0ECDB"/>
+                        </svg>                            
+                        <div>Israel will not investigate Shireen Abu Akleh's killing</div>         
+                        <svg class="expend_arrow" width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2 2L10 10.7273L18 2" stroke="#D0ECDB" stroke-width="2.5"/>
+                        </svg>                                                                                                     
+                    </div>
+                    <div class="event_desc">
+                        <div class="bullets">
+                            <div class="bullet">
+                                <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                                </svg>                                    
+                                <div>Land to be repurposed for military use in one of the biggest expulsion decisions since 1967 occupation.</div>                                    
+                            </div>
+                            <div class="bullet">
+                                <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                                </svg>                                   
+                                <div>According to the Geneva conventions pertaining to humanitarian treatment in war, it is illegal to expropriate occupied land for purposes that do not benefit the people living there, or to forcibly transfer the local population.</div>                                    
+                            </div>
+                            <div class="bullet">
+                                <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                                </svg>                                    
+                                <div>Land to be repurposed for military use in one of the biggest expulsion decisions since 1967 occupation.</div>                                    
+                            </div>
+                        </div>
+                        <div class="source">
+                            <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                            </svg>                                
+                            Source:&nbsp;
+                            <a href="">The Guardian</a>
+                            &nbsp;&nbsp;
+                            ( <a href=""><div>&nbsp;Archive
+                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.92313 10.2122C7.2224 10.2122 8.27925 9.15538 8.27925 7.85654C8.27925 6.55685 7.2224 5.5 5.92313 5.5C4.62386 5.5 3.56702 6.55685 3.56702 7.85612C3.56702 9.15538 4.62386 10.2122 5.92313 10.2122Z" fill="#5781CE"/>
+                                    <path d="M0.422974 0V16.9231V22H21.5768V16.9231V0H0.422974ZM1.26913 0.846154H20.7307V12.5413L15.9397 8.14931C15.8568 8.07358 15.7477 8.03592 15.6351 8.03846C15.523 8.04354 15.4172 8.09304 15.3415 8.17596L11.8033 12.0509L13.4144 13.662C13.5798 13.8274 13.5798 14.0948 13.4144 14.2602C13.3319 14.3432 13.2236 14.3846 13.1153 14.3846C13.007 14.3846 12.8987 14.3432 12.8162 14.2607L11.1975 12.7147L9.19082 10.7081C9.03259 10.5503 8.77959 10.5422 8.61205 10.6895L1.53186 16.9231H1.26913V0.846154ZM20.7307 21.1538H1.26913V17.7692H20.7307V21.1538Z" fill="#5781CE"/>
+                                </svg>                                    
+                                </div></a>)
+                        </div>
+                        <div class="tag">
+                            <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                            </svg>                                
+                            Tags:&nbsp;
+                            <div class="tags_list">
+                                <div class="tag_el">[OCCUPATION]</div>
+                                <div class="tag_el">[HOME DEMOLITIONS & EVICTIONS]</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="pages">
+        <div class="page_num page_num1">1</div>
+        <div class="page_num">2</div>
+        <div class="page_num">3</div>
+        <div class="page_next">
+            <svg width="14" height="20" viewBox="0 0 14 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.56665 17.9L10.3121 9.88336L1.56665 1.86669" stroke="#232E52" stroke-width="3"/>
+            </svg>                    
+        </div>
+    </div>
+    <div id="footer">
+        <svg id="footer_svg" width="105" height="103" viewBox="0 0 105 103" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M80.9117 0C81.2181 2.66993 81.3755 5.38514 81.3755 8.13712C81.3755 47.1353 49.7612 78.7496 10.763 78.7496C7.10374 78.7496 3.50948 78.4713 0.000244141 77.9346V101.767C3.53227 102.168 7.12355 102.375 10.763 102.375C62.8089 102.375 105.001 60.183 105.001 8.13712C105.001 5.39583 104.883 2.68188 104.654 0H80.9117Z" fill="#7188B3"/>
+        </svg>  
+        <div id="footer_title">Subscribe to our newsletter.</div>              
+        <div id="footer_desc">Join to receive our weekly news recap</div> 
+        <form action="" id="footer_form">
+            <input type="text" id="newsletter_email" name="newsletter_email">
+            <input type="submit" id="submit_email" value="SUBSCRIBE">
+        </form>             
+    </div>
+    <div id="copyright">Copyright 2023 - Timeline IL PS</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="{% static 'js/main.js' %}" defer></script>
+</body>
+</html>

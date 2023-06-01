@@ -1,0 +1,148 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en" style="overflow-x: hidden;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimelineILPS</title>
+    <link rel="icon" href="{% static 'img/logo.png' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" media='screen and (min-width: 900px)' href="{% static 'css/main.css' %}">
+    <link rel='stylesheet' media='screen and (max-width: 900px)' href="{% static 'css/main_mobile.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <style>
+        #about{
+            opacity: 1;
+            border-bottom: 2.5px solid white;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="header_wrapper">
+        <header id="header">
+            <div id="header_p1">
+                <a href="{% url 'landing' %}"><img src="{% static 'img/logo.png' %}" alt="" id="landing_logo"></a> 
+            </div>
+            <div id="header_p2">
+                    <a href="{% url 'landing' %}"><div id="events" class="head_menu_li">Events</div></a>
+                    <div id="about" class="head_menu_li">About</div>
+            </div>
+            <div id="header_p3">
+                    <div id="subscribe" class="onHover">Subscribe</div>
+            </div>
+        </header>
+        <div id="head_desc">Documenting the daily events shaping the Israeli & Palestinian conflict.</div>
+    </div>
+    <div id="preloader">
+        <!-- <div id="loader"></div> -->
+        <div class="dot-wave">
+            <div class="dot-wave__dot"></div>
+            <div class="dot-wave__dot"></div>
+            <div class="dot-wave__dot"></div>
+            <div class="dot-wave__dot"></div>
+        </div>
+    </div>
+    <section id="big_cont">
+        <div id="event_ctrl">
+            <div id="newest_event">ABOUT</div>
+        </div>
+        <div id="about_sec">
+            <div class="about_title">Vision</div>
+            <div id="vision_desc">The purpose of Timeline IL PS is to keep track of the chronological order of daily events happening in Israel and Palestine so it is clear what is happening on the ground, how cycles of violence begin and what the reality of life is for those who are affected by the conflict.</div>
+            <div class="about_title">News & Sources</div>
+            <div class="semi_title">The timeline will highlight all of the following types of events:</div>
+                <div class="about_bullet">
+                    <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                    </svg>
+                    <div>Relevant domestic & international news</div>
+                </div>
+                <div class="about_bullet">
+                    <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                    </svg>
+                    <div>Acts of violence & aggression</div>
+                </div>
+                <div class="about_bullet">
+                    <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                    </svg>
+                    <div>Commentary by key government/notable figures that is directed towards or affects the lives of those on the other side.</div>
+                </div>
+                <div class="about_bullet">
+                    <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                    </svg>
+                    <div>Videos & images that show first hand accounts of the conflict</div>
+                </div>
+            <div class="semi_title">The timeline will utilize the following sourcing methodology:</div>
+                <div class="about_bullet">
+                    <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                    </svg>
+                    <div>Primary – ranked as “high” to “very high” for factual reporting on mediabiasfactcheck.com</div>
+                </div>
+                    <div class="semi_bullet">
+                        <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14.4787 7.68211L9.115 12.1251L8.88213 12.318L9.07687 12.5494L9.59063 13.1597L9.78314 13.3883L10.0125 13.1966L17.1924 7.19667L17.4686 6.96583L17.1917 6.73574L10.0119 0.769269L9.78293 0.579018L9.5909 0.806473L9.07634 1.41596L8.88099 1.64736L9.11421 1.84053L14.4794 6.28434H0.999857H0.699857V6.58434V7.3821V7.68211H0.999857H14.4787Z" fill="#838892" stroke="#838892" stroke-width="0.6"/>
+                        </svg>                              
+                        <div>Examples: ABC News, Associated Press, BBC, Der Spiegel, Haaretz, Le Monde, Reuters, Times of Israel</div>                          
+                    </div>
+                <div class="about_bullet">
+                    <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                    </svg>
+                    <div>Secondary – ranked as “mixed” to “mostly factual” for factual reporting on mediabiasfactcheck.com.</div>
+                </div>
+                    <div class="semi_bullet">
+                        <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14.4787 7.68211L9.115 12.1251L8.88213 12.318L9.07687 12.5494L9.59063 13.1597L9.78314 13.3883L10.0125 13.1966L17.1924 7.19667L17.4686 6.96583L17.1917 6.73574L10.0119 0.769269L9.78293 0.579018L9.5909 0.806473L9.07634 1.41596L8.88099 1.64736L9.11421 1.84053L14.4794 6.28434H0.999857H0.699857V6.58434V7.3821V7.68211H0.999857H14.4787Z" fill="#838892" stroke="#838892" stroke-width="0.6"/>
+                        </svg>                             
+                        <div>Examples: Al Jazeera, Bloomberg, CNN, Jerusalem Post, MSNBC, The Intercept</div>                          
+                    </div>
+                <div class="about_bullet">
+                    <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="7" height="7" rx="3.5" fill="#454648"/>
+                    </svg>
+                    <div>Videos & Images</div>
+                </div>
+                    <div class="semi_bullet">
+                        <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14.4787 7.68211L9.115 12.1251L8.88213 12.318L9.07687 12.5494L9.59063 13.1597L9.78314 13.3883L10.0125 13.1966L17.1924 7.19667L17.4686 6.96583L17.1917 6.73574L10.0119 0.769269L9.78293 0.579018L9.5909 0.806473L9.07634 1.41596L8.88099 1.64736L9.11421 1.84053L14.4794 6.28434H0.999857H0.699857V6.58434V7.3821V7.68211H0.999857H14.4787Z" fill="#838892" stroke="#838892" stroke-width="0.6"/>
+                        </svg>                            
+                        <div>Verified feeds from social media and above news sources</div>                          
+                    </div>
+        </div>
+    </section>
+    <div id="contact">Contact: <span>info@timelineilps.com</span></div>
+    <div id="footer">
+        <svg id="footer_svg" width="105" height="103" viewBox="0 0 105 103" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M80.9117 0C81.2181 2.66993 81.3755 5.38514 81.3755 8.13712C81.3755 47.1353 49.7612 78.7496 10.763 78.7496C7.10374 78.7496 3.50948 78.4713 0.000244141 77.9346V101.767C3.53227 102.168 7.12355 102.375 10.763 102.375C62.8089 102.375 105.001 60.183 105.001 8.13712C105.001 5.39583 104.883 2.68188 104.654 0H80.9117Z" fill="#7188B3"/>
+        </svg>  
+        <div id="footer_title">Subscribe to our newsletter.</div>              
+        <div id="footer_desc">Join to receive our weekly news recap</div> 
+        <form action="" id="footer_form">
+            <input type="text" id="newsletter_email" name="newsletter_email">
+            <input type="submit" id="submit_email" value="SUBSCRIBE">
+        </form>             
+    </div>
+    <div id="copyright">Copyright 2023 - Timeline IL PS</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="{% static 'js/main.js' %}" defer></script>
+</body>
+</html>
